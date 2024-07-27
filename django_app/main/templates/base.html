@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/base_style.css' %}" />
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+    <title>Тестовое меню</title>
+</head>
+<body>
+    {% load menu_tag %}
+    <div class="container">
+        <div class="menu">
+            <a href="{% url 'admin:index' %}">Админ панель</a>
+            <div class="dropdown-menu">
+                <button onclick="myFunction()" class="drop-btn">Открыть меню</button>
+                <div id="myDropdown" class="dropdown-content">
+                    {% show_top_menu %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
+    <script src="{% static 'js/base.js' %}"></script>
+</body>
+</html>
